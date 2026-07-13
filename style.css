@@ -1,0 +1,102 @@
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; padding: 0; height: 100%;
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.screen { display: none; height: 100%; }
+.screen.active { display: flex; align-items: center; justify-content: center; }
+
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 28px 24px;
+  width: 340px;
+  max-width: 92vw;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+h1 { font-size: 26px; margin: 0 0 6px; }
+h2 { margin: 0 0 12px; }
+.sub { color: #8b949e; font-size: 14px; margin-bottom: 20px; }
+.hint { color: #8b949e; font-size: 12px; margin-top: 10px; }
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #30363d;
+  background: #0d1117;
+  color: #e6edf3;
+  font-size: 15px;
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.btn.primary { background: #238636; color: white; }
+.btn.primary:hover { background: #2ea043; }
+.btn.secondary { background: #1f6feb; color: white; }
+.btn.secondary:hover { background: #388bfd; }
+.btn.tiny { width: auto; padding: 8px 12px; font-size: 13px; background: #30363d; color: #e6edf3; }
+
+.divider { color: #8b949e; font-size: 12px; margin: 8px 0; }
+.error { color: #f85149; font-size: 13px; min-height: 18px; margin-top: 8px; }
+
+.room-code-box {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: #0d1117; border: 1px dashed #30363d; border-radius: 10px;
+  padding: 12px; margin-bottom: 16px;
+}
+#room-code-display { font-size: 24px; font-weight: bold; letter-spacing: 4px; }
+
+.players-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.player-row {
+  display: flex; align-items: center; gap: 10px;
+  background: #0d1117; border-radius: 8px; padding: 8px 12px;
+  font-size: 14px;
+}
+.dot { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; }
+.crown { margin-inline-start: auto; }
+
+/* ---------- شاشة اللعب ---------- */
+#screen-game { flex-direction: column; padding: 8px; height: 100vh; }
+#score-bar {
+  display: flex; width: 100%; max-width: 480px; height: 22px;
+  border-radius: 6px; overflow: hidden; margin-bottom: 8px; background: #21262d;
+}
+#score-bar .seg { display: flex; align-items: center; justify-content: center; font-size: 11px; color: #fff; transition: width .15s; }
+
+#board-wrap { flex: 1; display: flex; align-items: center; justify-content: center; width: 100%; min-height: 0; }
+#board { background: #0d1117; border: 2px solid #30363d; border-radius: 6px; max-width: 100%; max-height: 100%; }
+
+#dpad {
+  display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 0 4px;
+}
+.dpad-row { display: flex; gap: 60px; }
+.dpad-btn {
+  width: 56px; height: 56px; border-radius: 12px; border: none;
+  background: #21262d; color: #e6edf3; font-size: 20px;
+  box-shadow: 0 3px 0 #0d1117;
+}
+.dpad-btn:active { transform: translateY(2px); box-shadow: none; }
+
+#over-results { margin: 12px 0 20px; text-align: right; }
+.result-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; font-size: 14px; }
+.result-row .name { flex: 1; }
